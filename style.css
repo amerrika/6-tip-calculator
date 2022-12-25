@@ -1,0 +1,210 @@
+/* --- CSS Reset --- */
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+}
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+img, picture, video, canvas, svg, span {
+    display: block;
+    max-width: 100%;
+}
+input, button, textarea, select, h1, h2, h3 {
+    font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/* Variables */
+
+:root {
+    
+    --clr-primary: #385b5d; /* H1 Title, Button Reset, Selected Tip */
+
+    --clr-neutral-100: #f4fafa; /* Input Background, Custom Tip */
+    --clr-neutral-300: #c5e4e7; /* Body Background,  */
+    --clr-neutral-400: #9fe8df; /* Button Hover, Tip Hover*/
+    --clr-neutral-500: #7f9c9f;
+    --clr-neutral-700: #5e7a7d;
+    --clr-neutral-800: #00494d;
+
+    --clr-accent-100: #ffffff; /* App Background */
+    --clr-accent-900: #032f34; /* Entered Numbers */
+
+    --clr-warning: #b87167;
+
+    --ff-primary: 'Space Mono', monospace;
+
+    --fw-bold: 700;
+
+    --fs-100: 1.5rem;
+    --fs-400: 2.4rem;
+    --fs-800: 3.8rem;
+
+    --border-radius-100: 3px;
+    --border-radius-500: 2rem;
+}
+
+/* General Styling */
+
+body {
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-100);
+    background-color: var(--clr-neutral-300);
+    padding: 3rem;
+
+    display: grid;
+    gap: 5rem;
+    place-content: center;
+}
+
+input {
+    font-size: var(--fs-400);
+    text-align: right;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: var(--border-radius-100);
+    background-color: var(--clr-neutral-100);
+    display: block;
+    width: 100%;
+
+    -moz-appearance: textfield; /* To remove default arrows of input */
+}
+
+/* Buttons */
+
+.btn-tip,
+.input-tip-custom {
+    cursor: pointer;
+    padding: .5rem 4rem;
+    font-size: var(--fs-400);
+    border: none;
+    border-radius: var(--border-radius-100);
+    max-width: 13rem;
+}
+.btn-tip {
+    color: var(--clr-accent-100);
+    background-color: var(--clr-neutral-800);
+}
+.btn-tip:hover {
+    background-color: var(--clr-neutral-500);
+}
+.input-tip-custom {
+    background-color: var(--clr-neutral-100);
+    font-size: var(--fs-100);
+
+}
+.input-tip-custom:hover {
+    background-color: var(--clr-accent-100);
+    border: 2px solid var(--clr-neutral-500);
+}
+
+.btn-reset {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: var(--border-radius-100);
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    background-color: var(--clr-neutral-500);
+    color: var(--clr-neutral-800);
+}
+.btn-reset:hover {
+    background-color: var(--clr-neutral-100);
+}
+
+/* Header */
+
+/* Calculator */
+
+.calculator {
+    padding: 3rem;
+    background-color: var(--clr-accent-100);
+    border-radius: var(--border-radius-500);
+
+    display: flex;
+    gap: 3rem;
+}
+.calculator > * {
+    border-radius: var(--border-radius-500);
+    width: 41rem;
+}
+
+@media (max-width: 969px){
+    .calculator {
+        display: grid;
+    }
+}
+
+/* Calculator Left */
+
+.calculator-left {
+    display: grid;
+    gap: 2.5rem;
+    padding: 2rem;
+}
+
+.bill-input::placeholder {
+    text-align: left;
+}
+
+.tip-buttons {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Calculator Right */
+
+.calculator-right {
+    padding: 2rem;
+    background-color: var(--clr-neutral-800);
+}
+
+.wrapper > * {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.main {
+    color: var(--clr-accent-100);
+}
+.sub {
+    font-size: 1.3rem;
+    color: var(--clr-neutral-500);
+}
+.tip-amount,
+.total {
+    font-size: var(--fs-800);
+    color: var(--clr-neutral-500);
+}
+
+/* Utilities */
+
+.primary-heading {
+    font-size: var(--fs-400);
+    color: var(--clr-primary);
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+.secondary-heading {
+    margin-bottom: 1rem;
+}
+
+.tip-active {
+    background-color: var(--clr-neutral-500);
+}
