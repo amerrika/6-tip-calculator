@@ -4,6 +4,7 @@ const labelTotal = document.querySelector(".total");
 
 const btnReset = document.querySelector(".btn-reset");
 const btnTipArray = document.getElementsByClassName("btn-tip");
+const btnTipCustom = document.querySelector(".input-tip-custom");
 
 const inputBill = document.querySelector(".bill-input");
 const inputPeople = document.querySelector(".people-input");
@@ -88,6 +89,9 @@ for (let i = 0; i < btnTipArray.length; i++) {
         tip = 1 + (parseInt(e.target.innerText))/100; 
         displayUpdate();
 
+        // custom tip value set to empty
+        btnTipCustom.value = "";
+
         // add class tip-active
         btnTipArray[i].classList.add("tip-active");
         
@@ -99,6 +103,20 @@ for (let i = 0; i < btnTipArray.length; i++) {
         }
     })
 };
+
+// Custom Tip Button
+
+btnTipCustom.addEventListener("input", function(){
+    // custom tip value
+    tip = 1 + (parseInt(btnTipCustom.value))/100;
+    // remove class tip-active from buttons
+    for(let i = 0; i < btnTipArray.length; i++){
+        btnTipArray[i].classList.remove("tip-active")
+    }
+    // display update
+    displayUpdate();
+})
+
 
 // Reset Button
 btnReset.addEventListener("click", function(){

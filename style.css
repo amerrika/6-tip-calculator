@@ -171,6 +171,10 @@ input {
 .calculator-right {
     padding: 2rem;
     background-color: var(--clr-neutral-800);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .wrapper > * {
