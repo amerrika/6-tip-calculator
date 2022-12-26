@@ -24,6 +24,7 @@ function init(){
     displayUpdate();
     inputBill.value = bill;
     inputPeople.value = people;
+    btnTipCustom.value = "";
 }
 
 init()
@@ -105,7 +106,6 @@ for (let i = 0; i < btnTipArray.length; i++) {
 };
 
 // Custom Tip Button
-
 btnTipCustom.addEventListener("input", function(){
     // custom tip value
     tip = 1 + (parseInt(btnTipCustom.value))/100;
@@ -126,5 +126,4 @@ btnReset.addEventListener("click", function(){
     
   
 
-// Ako unesem slovo ili sličan znak display mi NaN
-// custom tip
+// If a user enters something other than a number it gets a NaN on display
